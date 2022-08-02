@@ -79,15 +79,16 @@ input[type="file"] {
     /* margin-left: 10px; */
     text-align: center;
 }
+/* Who I Am? */
 #right{
     float: right;
     width: 25%;
-    height: 250px;
+    height: 230px;
     background-color:chocolate;
     text-align: center;
     margin-top: 90px;
     border-radius: 15px;
-    font-size: 15px;
+    font-size: 16px;
 }
 #right:hover{
     background-color:teal;

@@ -4,6 +4,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 from cv2 import reduce
 from django.shortcuts import resolve_url
+from importlib_metadata import method_cache
 import numpy
 from keras.preprocessing import image 
 
@@ -64,10 +65,11 @@ classes = { 1:'Speed limit should be (20km/h)',
             41:'Roundabout mandatory', 
             42:'End of no passing', 
             43:'End no passing veh > 3.5 tons',
-            44:'Dog on the road',
-            45:'Cat on the road'}
+            44:'None of above listed',
+            }
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'D:/RoadProject/templates'
 
 def model_predict(img_path,model):
     test_image = image.load_img(img_path,target_size=(30,30))
@@ -77,9 +79,21 @@ def model_predict(img_path,model):
     result = classes[(list(result).index(max(result)) + 1)]
     return result
 
-@app.route('/',methods=['GET'])
+@app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/safety')
+def safetyt():
+    return render_template('safety.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route('/predict',methods=['GET','POST'])
 def upload():
@@ -87,6 +101,7 @@ def upload():
         f = request.files['file']
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(basepath,'Test',secure_filename(f.filename))
+        # print(file_path)
         preds = model_predict(file_path,model)
         return preds
     return None
