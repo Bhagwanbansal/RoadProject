@@ -1,5 +1,5 @@
 # Road Alertness sytem
-• Developed an web-page Application using python(flask) and Javascript to predict the Traffic sign boards.
+• Developed a web-page Application using python(flask) and Javascript to predict the Traffic sign boards.
 <br>
 • A web framework which is capable of alerting the user by estimating the sign boards on roads using knowledge of Neural Networks(CNN).
 <br>
@@ -7,3 +7,9 @@
 <br>
 • Used HTML,CSS,JavaScript to create a GUI that supports action such as upload image and showing out the result on screen.
 <br>
+### Project Screenshots
+![altt](https://github.com/Bhagwanbansal/RoadProject/blob/master/11.jpg?raw=true)
+<br>
+![altt](https://github.com/Bhagwanbansal/RoadProject/blob/master/22.jpg?raw=true)
+<br>
+![altt](https://github.com/Bhagwanbansal/RoadProject/blob/master/33.jpg?raw=true) 
